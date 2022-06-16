@@ -1,14 +1,14 @@
 {
     "name": "@iamyth/license-generator",
-    "version": "1.0.2",
-    "main": "index.js",
-    "types": "index.d.ts",
+    "version": "1.0.5",
+    "main": "lib/index.js",
+    "types": "lib/index.d.ts",
     "bin": {
-        "create-license": "bin/create-license.js"
+        "create-license": "lib/bin/create-license.js"
     },
     "exports": {
-        "require": "index.js",
-        "types": "index.d.ts"
+        "require": "lib/index.js",
+        "types": "lib/index.d.ts"
     },
     "license": "MIT",
     "scripts": {
@@ -17,19 +17,21 @@
         "lint": "pnpm run run-script script/lint.ts",
         "build": "pnpm run run-script script/build.ts",
         "dogfood": "ts-node --project config/tsconfig.src.json src/bin/create-license.ts --license MIT --name 'Jamyth Luk'",
-        "license": "node dist/bin/create-license.js"
+        "license": "node dist/lib/bin/create-license.js"
+    },
+    "dependencies": {
+        "@iamyth/logger": "1.0.6",
+        "fs-extra": "10.1.0",
+        "yargs": "17.5.1"
     },
     "devDependencies": {
-        "@iamyth/logger": "1.0.6",
         "@iamyth/prettier-config": "0.0.2",
         "@types/fs-extra": "9.0.13",
         "@types/node": "18.0.0",
         "@types/yargs": "17.0.10",
         "eslint-config-iamyth": "0.0.10",
-        "fs-extra": "10.1.0",
         "prettier": "2.7.1",
         "ts-node": "10.8.1",
-        "typescript": "4.7.3",
-        "yargs": "17.5.1"
+        "typescript": "4.7.3"
     }
 }

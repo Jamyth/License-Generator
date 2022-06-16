@@ -20,7 +20,7 @@ function build() {
 
 function copyTemplate() {
     const location = path.resolve(FilePath.src, "template");
-    const target = path.resolve(FilePath.dist, "template");
+    const target = path.resolve(FilePath.dist, "lib", "template");
     fs.copySync(location, target, { recursive: true });
 }
 

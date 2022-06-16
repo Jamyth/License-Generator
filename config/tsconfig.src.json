@@ -10,7 +10,7 @@
         "declarationMap": true,
 
         "rootDir": "../src",
-        "outDir": "../dist",
+        "outDir": "../dist/lib",
 
         "importsNotUsedAsValues": "preserve",
         "isolatedModules": true
