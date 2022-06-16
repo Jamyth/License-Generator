@@ -2,13 +2,22 @@
     "name": "license-generator",
     "version": "1.0.0",
     "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "bin": {
+        "license": "dist/bin/license.js"
+    },
+    "exports": {
+        "require": "dist/index.js",
+        "types": "dist/index.d.ts"
+    },
     "license": "MIT",
     "scripts": {
         "run-script": "ts-node --project config/tsconfig.script.json",
-        "format": "yarn run-script script/format.ts",
-        "lint": "yarn run-script script/lint.ts",
-        "build": "yarn run-script script/build.ts",
-        "test": "TS_NODE_PROJECT='./config/tsconfig.test.json' mocha --require ts-node/register ./test/**/*.test.ts"
+        "format": "pnpm run run-script script/format.ts",
+        "lint": "pnpm run run-script script/lint.ts",
+        "build": "pnpm run run-script script/build.ts",
+        "dogfood": "ts-node --project config/tsconfig.src.json src/bin/license.ts --license MIT --name 'Jamyth Luk'",
+        "license": "node dist/bin/license.js"
     },
     "files": [
         "dist/**"
@@ -16,10 +25,14 @@
     "devDependencies": {
         "@iamyth/logger": "1.0.6",
         "@iamyth/prettier-config": "0.0.2",
+        "@types/fs-extra": "9.0.13",
         "@types/node": "18.0.0",
+        "@types/yargs": "17.0.10",
         "eslint-config-iamyth": "0.0.10",
+        "fs-extra": "10.1.0",
         "prettier": "2.7.1",
         "ts-node": "10.8.1",
-        "typescript": "4.7.3"
+        "typescript": "4.7.3",
+        "yargs": "17.5.1"
     }
 }
