@@ -1,10 +1,10 @@
 {
-    "name": "license-generator",
-    "version": "1.0.0",
+    "name": "@iamyth/license-generator",
+    "version": "1.0.2",
     "main": "index.js",
     "types": "index.d.ts",
     "bin": {
-        "license": "bin/license.js"
+        "create-license": "bin/create-license.js"
     },
     "exports": {
         "require": "index.js",
@@ -16,8 +16,8 @@
         "format": "pnpm run run-script script/format.ts",
         "lint": "pnpm run run-script script/lint.ts",
         "build": "pnpm run run-script script/build.ts",
-        "dogfood": "ts-node --project config/tsconfig.src.json src/bin/license.ts --license MIT --name 'Jamyth Luk'",
-        "license": "node dist/bin/license.js"
+        "dogfood": "ts-node --project config/tsconfig.src.json src/bin/create-license.ts --license MIT --name 'Jamyth Luk'",
+        "license": "node dist/bin/create-license.js"
     },
     "devDependencies": {
         "@iamyth/logger": "1.0.6",
