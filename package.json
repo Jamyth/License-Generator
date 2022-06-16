@@ -1,14 +1,14 @@
 {
     "name": "license-generator",
     "version": "1.0.0",
-    "main": "dist/index.js",
-    "types": "dist/index.d.ts",
+    "main": "index.js",
+    "types": "index.d.ts",
     "bin": {
-        "license": "dist/bin/license.js"
+        "license": "bin/license.js"
     },
     "exports": {
-        "require": "dist/index.js",
-        "types": "dist/index.d.ts"
+        "require": "index.js",
+        "types": "index.d.ts"
     },
     "license": "MIT",
     "scripts": {
@@ -19,9 +19,6 @@
         "dogfood": "ts-node --project config/tsconfig.src.json src/bin/license.ts --license MIT --name 'Jamyth Luk'",
         "license": "node dist/bin/license.js"
     },
-    "files": [
-        "dist/**"
-    ],
     "devDependencies": {
         "@iamyth/logger": "1.0.6",
         "@iamyth/prettier-config": "0.0.2",
